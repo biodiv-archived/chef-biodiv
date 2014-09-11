@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<solr persistent="true">
+  <cores adminPath="/admin/cores">
+    <core instanceDir="species" name="species"/>
+    <core instanceDir="observations" name="observations"/>
+    <core instanceDir="newsletters" name="newsletters"/>
+    <core instanceDir="documents" name="documents"/>
+    <core instanceDir="projects" name="projects"/>
+    <core schema="schema.xml" shard="" instanceDir="users" name="users" config="solrconfig.xml" dataDir="data" collection=""/>
+    <core schema="schema.xml" shard="" instanceDir="wgp_maps" name="wgp_maps" config="solrconfig.xml" dataDir="data" collection=""/>
+  </cores>
+</solr>

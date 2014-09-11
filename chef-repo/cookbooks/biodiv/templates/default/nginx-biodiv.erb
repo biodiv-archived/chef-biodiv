@@ -1,0 +1,139 @@
+##
+# You should look at the following URL's in order to grasp a solid understanding
+# of Nginx configuration files in order to fully unleash the power of Nginx.
+# http://wiki.nginx.org/Pitfalls
+# http://wiki.nginx.org/QuickStart
+# http://wiki.nginx.org/Configuration
+#
+# Generally, you will want to move this file somewhere, and start with a clean
+# file but keep this around for reference. Or just disable in sites-enabled.
+#
+# Please see /usr/share/doc/nginx-doc/examples/ for more detailed examples.
+##
+
+server {
+	#listen   8080; ## listen for ipv4; this line is default and implied
+	#listen   [::]:80 default ipv6only=on; ## listen for ipv6
+
+	#root /<%= node.biodiv.data %>/<%= node.biodiv.appname %>;
+	#index index.html index.htm;
+
+	# Make site accessible from http://localhost/
+        server_name <%= node['biodiv']['servername'] %> www.<%= node['biodiv']['servername'] %>;
+
+	location /<%= node.biodiv.appname %>/static/templates {
+		alias <%= node.biodiv.data %>/static/templates/;
+	}
+
+	location /<%= node.biodiv.appname %>/logo/ {
+		alias <%= node.biodiv.data %>/logo/;
+	}
+	location /<%= node.biodiv.appname %>/t {
+		alias <%= node.biodiv.data %>/t;
+	}
+
+
+	location /<%= node.biodiv.appname %>/observations {
+		alias <%= node.biodiv.data %>/observations;
+	}
+	#access_log off;
+
+	location /<%= node.biodiv.appname %>/newsletters {
+		alias <%= node.biodiv.data %>/newsletters;
+	}
+	location /<%= node.biodiv.appname %>/group-themes {
+		alias <%= node.biodiv.data %>/group-themes;
+	}
+	location /<%= node.biodiv.appname %>/users {
+		alias <%= node.biodiv.data %>/users;
+	}
+
+	location /<%= node.biodiv.appname %>/userGroups {
+		alias <%= node.biodiv.data %>/userGroups;
+	}
+
+#	location /<%= node.biodiv.appname %>/images {
+#		alias <%= node.biodiv.data %>/images;
+#	}
+
+	location /<%= node.biodiv.appname %>/group_icons {
+		alias <%= node.biodiv.data %>/group_icons;
+	}
+
+	location /<%= node.biodiv.appname %>/content {
+		alias <%= node.biodiv.data %>/content;
+	}
+	location /<%= node.biodiv.appname %>/simg {
+		alias <%= node.biodiv.data %>/simg;
+	}
+	location /<%= node.biodiv.appname %>/maps {
+		alias <%= node.biodiv.data %>/maps;
+	}
+
+	location /geoserver {
+		proxy_pass http://localhost:8080/geoserver;
+	}
+
+	#access_log off;
+	access_log      /var/log/nginx/<%= node.biodiv.appname %>-access.log;
+	error_log       /var/log/nginx/<%= node.biodiv.appname %>-error.log notice;
+	rewrite_log on;
+	
+	location = / {
+		#rewrite_log on;
+		proxy_pass http://localhost:8080/<%= node.biodiv.appname %>/;
+		proxy_redirect   default;
+		proxy_redirect http://localhost:8080/<%= node.biodiv.appname %>/ /;
+	}
+	location = /<%= node.biodiv.appname %> {
+		#rewrite_log on;
+		proxy_pass http://localhost:8080/<%= node.biodiv.appname %>/;
+		proxy_redirect   default;
+		proxy_redirect http://localhost:8080/<%= node.biodiv.appname %>/ /;
+	}
+
+	location / {
+		#rewrite_log on;
+
+
+		rewrite ^/<%= node.biodiv.appname %>/(static|plugins|data|bootstrap|js|css|j_spring_security_check|j_spring_openid_security_check|images|j_spring_security_logout|.*/upload_resource|ck)(.*)$ /<%= node.biodiv.appname %>/$1$2 break;
+
+		rewrite ^/map/(img|theme)/(.*)$   /<%= node.biodiv.appname %>/js/OpenLayers-2.10/$1/$2 last;
+		rewrite ^/group/([A-Za-z0-9-_]+)/(map)$   /<%= node.biodiv.appname %>/map?userGroup=$1 last;
+
+		rewrite ^/content/(.*)$ /<%= node.biodiv.appname %>/content/$1 last;
+
+		rewrite ^/(species|observation|activity|activityFeed|SUser|user|page|pages|requestMembership|joinUs|leaveUs|inviteMembers|login|logout|register|static|group|j_spring_security_logout|recommendation|comment|newsletter|edit|emailConfirmation|search|checklist|jcaptcha|openId|data|chart|curation|resource|rateable|rating|document|project|UFile|direction|biodivAdmin|action|map|theportal)(.*)$ /<%= node.biodiv.appname %>/$1$2 last;
+
+		#RewriteCond %{REQUEST_URI} !(^(/<%= node.biodiv.appname %>/(observations|newsletters|group-themes|users|userGroups|images|group_icons|content)|(wgp_maps|geoserver)))
+		#RewriteCond %{REQUEST_URI} !(^/(biodiversity_news|biodiversity_in_india))
+		proxy_pass http://localhost:8080/;
+		proxy_redirect   default;
+        proxy_redirect http://<%= node.biodiv.servername %>/<%= node.biodiv.appname %>/ /;
+		proxy_set_header   Host $host;
+
+		
+		#rewrite ^/<%= node.biodiv.appname %>/(.*)$ /$1 permanent;
+
+		# First attempt to serve request as file, then
+		# as directory, then fall back to index.html
+		#try_files $uri $uri/ /index.html;
+		# Uncomment to enable naxsi on this location
+		# include /etc/nginx/naxsi.rules
+	}
+
+	error_page 404 /404.html;
+
+	# redirect server error pages to the static page /50x.html
+	#
+	#error_page 500 502 503 504 /50x.html;
+	location = /503.html {
+		alias <%= node.biodiv.data %>/update_in_progress.html;
+	}
+
+
+
+#    ProxyPassReverseCookiePath /<%= node.biodiv.appname %> /
+
+}
+

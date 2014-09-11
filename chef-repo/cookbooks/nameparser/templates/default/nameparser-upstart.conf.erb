@@ -1,0 +1,23 @@
+description "Biodiv name parser"
+
+env USER=<%= node.nameparser.user %>
+env GROUP=<%= node.nameparser.group %>
+env APP_HOME=<%= node.nameparser.home %>
+
+
+start on (filesystem and net-device-up IFACE=lo)
+stop on runlevel [!2345]
+
+respawn
+respawn limit 30 10
+umask 022
+expect daemon
+
+pre-start script
+    #If improper shutdown and the PID file is left on disk delete it so we can start again
+    if [ -f $APP_HOME/RUNNING_PID ] && ! ps -p `cat $APP_HOME/RUNNING_PID` > /dev/null ; then 
+        rm $APP_HOME/RUNNING_PID ; 
+    fi
+end script
+
+exec start-stop-daemon --pidfile ${APP_HOME}/RUNNING_PID --chdir ${APP_HOME} --chuid $USER:$GROUP --exec <%= node.nameparser.binary %> --background --start -- ""

@@ -1,0 +1,41 @@
+9
+
+dir
+111302
+http://ganga/svn/rep/textmining/search/trunk/web/solr_instance/documentsCore
+http://ganga/svn/rep
+
+
+
+2010-01-13T09:46:36.225674Z
+110104
+sravanthi
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0
+
+conf
+dir
+
+bin
+dir
+
