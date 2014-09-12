@@ -55,7 +55,6 @@ end
 #  setup nginx
 template "#{node['nginx']['dir']}/sites-enabled/#{node.biodiv.appname}" do
   source "nginx-biodiv.erb"
-  action :create_if_missing
   notifies :restart, resources(:service => "nginx"), :immediately
 end
 
@@ -89,6 +88,14 @@ bash 'unpack biodiv' do
   EOH
   not_if "test -d #{node.biodiv.extracted}"
   notifies :create, "template[#{additionalConfig}]",:immediately
+  notifies :create, "bash[copy static files]",:immediately
+end
+
+bash 'copy static files' do
+  code <<-EOH
+  cp -r #{node.biodiv.extracted}/web-app/images #{node.biodiv.data}
+  EOH
+  only_if "test -d #{node.biodiv.extracted}"
 end
 
 application node.biodiv.appname do

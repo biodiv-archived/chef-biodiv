@@ -26,8 +26,17 @@ server {
 	}
 
 	location /<%= node.biodiv.appname %>/logo/ {
-		alias <%= node.biodiv.data %>/logo/;
+		alias <%= node.biodiv.data %>/images/;
 	}
+	
+	location /<%= node.biodiv.appname %>/images/ {
+		alias <%= node.biodiv.data %>/images/;
+	}
+	
+	location /<%= node.biodiv.appname %>/img/ {
+		rewrite ^/img/(.*)$ /images/$1 last;
+	}
+	
 	location /<%= node.biodiv.appname %>/t {
 		alias <%= node.biodiv.data %>/t;
 	}
