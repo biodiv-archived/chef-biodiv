@@ -93,7 +93,9 @@ end
 
 bash 'copy static files' do
   code <<-EOH
-  cp -r #{node.biodiv.extracted}/web-app/images #{node.biodiv.data}
+  mkdir -p #{node.biodiv.data}/img
+  cp -r #{node.biodiv.extracted}/web-app/images/* #{node.biodiv.data}/img
+  chown -R #{node.tomcat.user}:#{node.tomcat.group} #{node.biodiv.data}
   EOH
   only_if "test -d #{node.biodiv.extracted}"
 end
