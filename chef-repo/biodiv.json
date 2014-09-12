@@ -48,5 +48,8 @@
         "main" : {
             "myhostname" : "wikwio.org"
         }
+    },
+    "solr" : {
+    	"data" : "/apps/biodiv/data/solr"
     }
 }
