@@ -26,7 +26,7 @@
     },
     "tomcat": {
         "base_version": "7",
-        "catalina_options": "-Dorg.apache.tomcat.util.buf.UDecoder.ALLOW_ENCODED_SLASH=true -Dbiodiv.config.location=/usr/local/src/biodiv-master/additional-config.groovy -Xmx2g -XX:PermSize=256M -XX:MaxPermSize=512M -DBIODIV_CONFIG_LOCATION=/usr/share/tomcat7/.grails/biodiv-additional-config.groovy"
+        "catalina_options": "-Dorg.apache.tomcat.util.buf.UDecoder.ALLOW_ENCODED_SLASH=true -Dbiodiv.config.location=/usr/local/src/biodiv-master/additional-config.groovy -Xmx2g -XX:PermSize=256M -XX:MaxPermSize=512M -DBIODIV_CONFIG_LOCATION=/usr/share/tomcat7/.grails/biodiv-additional-config.groovy  -Dlog4jdbc.spylogdelegator.name=net.sf.log4jdbc.log.slf4j.Slf4jSpyLogDelegator"
     },
     "java" : {
         "jdk_version": "7"

@@ -9,7 +9,7 @@ environments {
 	pamba {
 		servername = "<%= node.biodiv.servername %>"
 		appName = "<%= node.biodiv.appname %>"
-		dataSource { url = "jdbc:postgresql://localhost:5432/<%= node['biodiv']['database'] %>" }
+		dataSource { url = "jdbc:log4jdbc:postgresql://localhost:5432/<%= node['biodiv']['database'] %>" }
 		grails.serverURL = "http://<%= node.biodiv.servername %>/${appName}"
 
 		speciesPortal {
