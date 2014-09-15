@@ -54,6 +54,11 @@ template "#{node['nginx']['dir']}/sites-enabled/#{node.biodiv.appname}" do
   notifies :restart, resources(:service => "nginx"), :immediately
 end
 
+#  setup nginx
+template "#{node['nginx']['dir']}/sites-enabled/#{node.biodiv.appname}-main" do
+  source "nginx-wikwio.erb"
+  notifies :restart, resources(:service => "nginx"), :immediately
+end
 
 # install grails
 include_recipe "grails-cookbook"
@@ -90,7 +95,7 @@ end
 bash 'copy static files' do
   code <<-EOH
   mkdir -p #{node.biodiv.data}/img
-  cp -r #{node.biodiv.extracted}/web-app/images/* #{node.biodiv.data}/img
+  cp -r #{node.biodiv.extracted}/web-app/images/* #{node.biodiv.data}/images
   chown -R #{node.tomcat.user}:#{node.tomcat.group} #{node.biodiv.data}
   EOH
   only_if "test -d #{node.biodiv.extracted}"
