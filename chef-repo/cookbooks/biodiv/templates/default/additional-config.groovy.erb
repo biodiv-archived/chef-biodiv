@@ -1,6 +1,11 @@
 dataSource.username = "<%= node['biodiv']['database-user'] %>"
 dataSource.password = "<%= node['biodiv']['database-password'] %>"
 
+
+grails.plugin.springsecurity.ui.register.postRegisterUrl  = "http://<%= node.biodiv.servername %>/${appName}/user/myprofile" // use defaultTargetUrl if not set
+NamesIndexerService.FILENAME = "<%= node.biodiv.appname %>_tstLookup.dat";
+
+
 speciesPortal {
 	observations { filePicker.key = 'AXCVl73JWSwe7mTPb2kXdz' }
 }
