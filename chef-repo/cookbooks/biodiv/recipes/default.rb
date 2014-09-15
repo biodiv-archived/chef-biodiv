@@ -16,10 +16,6 @@ apt_package "imagemagick" do
   action :install
 end
 
-apt_package "imagemagick" do
-  action :install
-end
-
 apt_package "gdal-bin" do
   action :install
 end
@@ -88,7 +84,7 @@ bash 'unpack biodiv' do
   EOH
   not_if "test -d #{node.biodiv.extracted}"
   notifies :create, "template[#{additionalConfig}]",:immediately
-  notifies :create, "bash[copy static files]",:immediately
+  notifies :run, "bash[copy static files]",:immediately
 end
 
 bash 'copy static files' do

@@ -26,7 +26,7 @@ server {
 	}
 
 	location /<%= node.biodiv.appname %>/logo/ {
-		alias <%= node.biodiv.data %>/img/;
+		alias <%= node.biodiv.data %>/img/logo/;
 	}
 	
 	location /<%= node.biodiv.appname %>/img/ {
@@ -112,7 +112,7 @@ server {
 
 		rewrite ^/content/(.*)$ /<%= node.biodiv.appname %>/content/$1 last;
 
-		rewrite ^/(species|observation|activity|activityFeed|SUser|user|page|pages|requestMembership|joinUs|leaveUs|inviteMembers|login|logout|register|static|group|j_spring_security_logout|recommendation|comment|newsletter|edit|emailConfirmation|search|checklist|jcaptcha|openId|data|chart|curation|resource|rateable|rating|document|project|UFile|direction|biodivAdmin|action|map|theportal)(.*)$ /<%= node.biodiv.appname %>/$1$2 last;
+		rewrite ^/(species|observation|activity|activityFeed|SUser|user|page|pages|requestMembership|joinUs|leaveUs|inviteMembers|login|logout|register|static|group|j_spring_security_logout|recommendation|comment|newsletter|edit|emailConfirmation|search|checklist|jcaptcha|openId|data|chart|curation|resource|rateable|rating|document|project|UFile|direction|biodivAdmin|action|map|theportal|taxon)(.*)$ /<%= node.biodiv.appname %>/$1$2 last;
 
 		#RewriteCond %{REQUEST_URI} !(^(/<%= node.biodiv.appname %>/(observations|newsletters|group-themes|users|userGroups|images|group_icons|content)|(wgp_maps|geoserver)))
 		#RewriteCond %{REQUEST_URI} !(^/(biodiversity_news|biodiversity_in_india))
