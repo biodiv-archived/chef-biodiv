@@ -55,7 +55,7 @@ template "#{node['nginx']['dir']}/sites-enabled/#{node.biodiv.appname}" do
 end
 
 #  setup nginx
-template "#{node['nginx']['dir']}/sites-enabled/#{node.biodiv.appname}-main" do
+template "#{node['nginx']['dir']}/sites-enabled/#{node.biodiv.appname}-main.conf" do
   source "nginx-wikwio.erb"
   notifies :restart, resources(:service => "nginx"), :immediately
 end
@@ -94,7 +94,7 @@ end
 
 bash 'copy static files' do
   code <<-EOH
-  mkdir -p #{node.biodiv.data}/img
+  mkdir -p #{node.biodiv.data}/images
   cp -r #{node.biodiv.extracted}/web-app/images/* #{node.biodiv.data}/images
   chown -R #{node.tomcat.user}:#{node.tomcat.group} #{node.biodiv.data}
   EOH

@@ -17,7 +17,7 @@
         "database-user" : "biodiv",
         "database-password" : "biodiv123",
         "data" : "/apps/biodiv",
-        "augmentedmaps" : "/apps/biodiv"
+        "augmentedmaps" : "/apps/biodiv",
         "version" : "wikwio"
      },
     "postgresql": {
