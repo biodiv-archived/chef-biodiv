@@ -129,7 +129,7 @@ remote_directory "#{node.biodiv.data}/data" do
   action       :create_if_missing
   recursive true
   notifies :run, "execute[change-permission-#{node.biodiv.data}]", :immediately
-  not_if       { File.exists? node.biodiv.data }
+  not_if       { File.exists? "#{node.biodiv.data}/data/datarep" }
 end
 
 execute "change-permission-#{node.biodiv.data}" do
