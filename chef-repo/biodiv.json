@@ -38,9 +38,10 @@
         "group" : "tomcat7"
     },
     "geoserver" : {
-	"database" : "ibp",
+		"database" : "ibp",
         "database-user" : "geoserver",
-        "database-password" : "geoserver123"
+        "database-password" : "geoserver123",
+        "data" : "/apps/biodiv/data/geoserver"
     },
     "grails" : {
         "version" : "2.3.9"

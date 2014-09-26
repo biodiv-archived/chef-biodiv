@@ -1,13 +1,22 @@
 <global>
-  <contact>
-    <addressCity>Alexandria</addressCity>
-    <addressCountry>Egypt</addressCountry>
-    <addressType>Work</addressType>
-    <contactEmail>claudius.ptolomaeus@gmail.com</contactEmail>
-    <contactOrganization>The ancient geographes INC</contactOrganization>
-    <contactPerson>Claudius Ptolomaeus</contactPerson>
-    <contactPosition>Chief geographer</contactPosition>
-  </contact>
+  <settings>
+    <id>SettingsInfoImpl-74bcbea5:148b16ddd5a:-8000</id>
+    <contact>
+      <addressCity>Alexandria</addressCity>
+      <addressCountry>Egypt</addressCountry>
+      <addressType>Work</addressType>
+      <contactEmail>claudius.ptolomaeus@gmail.com</contactEmail>
+      <contactOrganization>The ancient geographes INC</contactOrganization>
+      <contactPerson>Claudius Ptolomaeus</contactPerson>
+      <contactPosition>Chief geographer</contactPosition>
+    </contact>
+    <charset>UTF-8</charset>
+    <numDecimals>8</numDecimals>
+    <onlineResource>http://geoserver.org</onlineResource>
+    <verbose>false</verbose>
+    <verboseExceptions>false</verboseExceptions>
+    <localWorkspaceIncludesPrefix>false</localWorkspaceIncludesPrefix>
+  </settings>
   <jai>
     <allowInterpolation>false</allowInterpolation>
     <recycling>false</recycling>
@@ -27,12 +36,7 @@
     <queueType>UNBOUNDED</queueType>
     <imageIOCacheThreshold>10240</imageIOCacheThreshold>
   </coverageAccess>
-  <charset>UTF-8</charset>
-  <numDecimals>8</numDecimals>
-  <onlineResource>http://geoserver.org</onlineResource>
-  <verbose>false</verbose>
-  <verboseExceptions>false</verboseExceptions>
-  <updateSequence>78</updateSequence>
+  <updateSequence>168</updateSequence>
   <featureTypeCacheSize>0</featureTypeCacheSize>
   <globalServices>true</globalServices>
   <xmlPostRequestLogBufferSize>1024</xmlPostRequestLogBufferSize>
