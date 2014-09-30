@@ -12,7 +12,7 @@
         "recipe[nameparser]"
     ],
     "biodiv": {
-        "servername": "wigp",
+        "servername": "portal.wikwio.org",
     	"database" : "biodiv",
         "database-user" : "biodiv",
         "database-password" : "biodiv123",
@@ -48,7 +48,9 @@
     },
     "postfix" : {
         "main" : {
-            "myhostname" : "wikwio.org"
+            "myhostname" : "wikwio.org",
+            "smtp_use_tls" : "no",
+            "smtpd_use_tls" : "no"
         }
     },
     "solr" : {
