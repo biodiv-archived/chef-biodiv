@@ -41,11 +41,12 @@ You will need sudo privilege to install packages and biodiversity portal.
     sudo apt-get install curl
 ### git
     sudo apt-get install git
-### berkshelf
-    sudo apt-get install ruby2.0 ruby-dev
-    sudo gem install berkshelf
 ### chef
     curl -L https://www.opscode.com/chef/install.sh | sudo bash
+### chef develepment kit
+    wget http://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chefdk_0.3.0-1_amd64.deb
+    sudo dpkg -i chefdk_0.3.0-1_amd64.deb
+
 
 Usage
 =====
@@ -64,7 +65,7 @@ Edit biodiv.json to change
     - geoserver data dir
 
 ## Install chef cookbooks
-    berks vendor cookbooks/
+    /opt/chefdk/bin/berks  vendor cookbooks/
 
 
 ## Setup biodoiversity portal
