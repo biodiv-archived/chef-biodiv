@@ -37,16 +37,17 @@ You will need sudo privilege to install packages and biodiversity portal.
 
 ## Packages
 
+Install in the following  order
+
 ### curl
     sudo apt-get install curl
 ### git
     sudo apt-get install git
-### chef
-    curl -L https://www.opscode.com/chef/install.sh | sudo bash
 ### chef develepment kit
     wget http://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chefdk_0.3.0-1_amd64.deb
     sudo dpkg -i chefdk_0.3.0-1_amd64.deb
-
+### chef
+    sudo curl -L https://www.opscode.com/chef/install.sh | sudo bash
 
 Usage
 =====
@@ -59,6 +60,7 @@ Change to the clone repository
    cd chef-biodiv
 
 Edit biodiv.json to change
+
     - server name
     - app data dir
     - solr data dir
