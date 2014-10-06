@@ -74,6 +74,28 @@ Edit biodiv.json to change
     sudo chef-solo -c solo.rb -j biodiv.json
 
 
+Update installation
+======
+
+### Update cookbooks
+
+Change to the directory where you cloned this repository
+
+    cd <repository directory>
+
+
+Update the cookbooks
+
+    /opt/chefdk/bin/berks  update
+    rm -rf cookbooks
+    /opt/chefdk/bin/berks  vendor cookbooks/
+    
+
+## Update biodiv installation
+
+    sudo chef-solo -c solo.rb -j biodiv.json
+
+
 Verifying the installation
 =======
 
