@@ -9,8 +9,16 @@
         "database-password" : "biodiv123",
         "data" : "/apps/biodiv",
         "augmentedmaps" : "/apps/biodiv",
-        "version" : "wikwio"
+        "version" : "wikwio",
+        "twitterUrl" : "https://twitter.com/projectwikwio",
+        "facebookUrl" : "https://www.facebook.com/projectwikwio",
+        "feedbackFormUrl" : "http://portal.wikwio.org/contactus",
+        "filePickerKey" : "AuF4qINIbR7mIemAGoBtbz",
+        "facebookAppId" : "563577983720540",
+		"facebookSecret" : "f0e43eacf6bcd4860f43306ab32c5593",
+		"supportEmail" : "support(at)wikwio(dot)org"
      },
+     
     "postgresql": {
         "password": {
             "postgres": "postgres123"
