@@ -54,5 +54,9 @@
     },
     "solr" : {
     	"data" : "/apps/biodiv/data/solr"
+    },
+    "ibpMapDatabase" : {
+    	"database-user" : "postgres",
+        "database-password" : "postgres123"
     }
 }
