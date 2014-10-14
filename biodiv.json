@@ -16,7 +16,9 @@
         "filePickerKey" : "AuF4qINIbR7mIemAGoBtbz",
         "facebookAppId" : "563577983720540",
 		"facebookSecret" : "f0e43eacf6bcd4860f43306ab32c5593",
-		"supportEmail" : "support(at)wikwio(dot)org"
+		"supportEmail" : "support(at)wikwio(dot)org",
+		"ibp-database-user" : "postgres",
+        "ibp-database-password" : "postgres123"
      },
      
     "postgresql": {
@@ -54,9 +56,6 @@
     },
     "solr" : {
     	"data" : "/apps/biodiv/data/solr"
-    },
-    "ibpMapDatabase" : {
-    	"database-user" : "postgres",
-        "database-password" : "postgres123"
     }
+    
 }
