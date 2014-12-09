@@ -18,7 +18,9 @@
 		"facebookSecret" : "f0e43eacf6bcd4860f43306ab32c5593",
 		"supportEmail" : "support(at)wikwio(dot)org",
 		"ibp-database-user" : "postgres",
-        "ibp-database-password" : "postgres123"
+        "ibp-database-password" : "postgres123",
+        
+        "hideLanguages" : "false"
      },
      
     "postgresql": {
