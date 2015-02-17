@@ -1,5 +1,6 @@
 {
     "run_list": [
+    	"recipe[java]",
         "recipe[biodiv]"
     ],
     "biodiv": {
@@ -20,7 +21,6 @@
 		"ibp-database-user" : "postgres",
         "ibp-database-password" : "postgres123",
 	"hideLanguages" : "false"
-	
      },
      
     "postgresql": {

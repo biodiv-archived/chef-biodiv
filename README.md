@@ -47,7 +47,7 @@ Install in the following  order
     wget http://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chefdk_0.3.0-1_amd64.deb
     sudo dpkg -i chefdk_0.3.0-1_amd64.deb
 ### chef
-    sudo curl -L https://www.opscode.com/chef/install.sh | sudo bash
+	sudo curl -L https://www.opscode.com/chef/install.sh > /tmp/install.sh ; sudo bash /tmp/install.sh -v 11.16.2
 
 Usage
 =====
