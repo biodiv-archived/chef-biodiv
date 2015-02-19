@@ -147,4 +147,13 @@ You can login as the admin user using username: `admin` and password: `admin`.
 Additionally you could register a new user to check email notifications work.
 
 
+### Compiling biodiv war without chef
+sudo su
+cd /usr/local/src/biodiv-wikwio
+export JAVA_HOME=/usr/lib/jvm/default-java
+export BIODIV_CONFIG_LOCATION=biodiv-additional-config.groovy
+/usr/local/grails-2.3.9/bin/grails --stacktrace upgrade
+/usr/local/grails-2.3.9/bin/grails --stacktrace -Dgrails.env=kk war
 
+### JBOSS jar manual download
+wget --no-check-certificate  https://repository.jboss.com/nexus/content/repositories/root_repository/maven2/org/mobicents/external/freetts/cmu_us_kal/1.2.2/cmu_us_kal-1.2.2.jar
