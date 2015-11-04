@@ -20,7 +20,7 @@
 		"supportEmail" : "support(at)wikwio(dot)org",
 		"ibp-database-user" : "postgres",
         "ibp-database-password" : "postgres123",
-	"hideLanguages" : "false"
+	    "hideLanguages" : "false"
      },
      
     "postgresql": {
@@ -62,6 +62,17 @@
     },
     "solr" : {
     	"data" : "/apps/biodiv/data/solr"
+    },
+    "oauth" : {
+        "google" : {
+            "key" : "29806730219-b6l9ofjup5f1luupdjngtv7ir8r8vlrv.apps.googleusercontent.com",
+            "secret" : "e7Sim7BDwp-CGNQ7f0m-UE6d"
+        },
+        "facebook" : {
+            "key" : "563577983720540",
+            "secret" : "f0e43eacf6bcd4860f43306ab32c5593"
+        }
+
     }
     
 }
