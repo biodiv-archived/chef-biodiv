@@ -6,26 +6,26 @@
     "biodiv": {
         "servername": "portal.wikwio.org",
     	"database" : "biodiv",
-        "database-user" : "biodiv",
-        "database-password" : "biodiv123",
+        "database-user" : "username",
+        "database-password" : "password",
         "data" : "/apps/biodiv",
         "augmentedmaps" : "/apps/biodiv",
         "version" : "wikwio",
         "twitterUrl" : "https://twitter.com/projectwikwio",
         "facebookUrl" : "https://www.facebook.com/projectwikwio",
         "feedbackFormUrl" : "http://portal.wikwio.org/contactus",
-        "filePickerKey" : "AuF4qINIbR7mIemAGoBtbz",
-        "facebookAppId" : "563577983720540",
-		"facebookSecret" : "f0e43eacf6bcd4860f43306ab32c5593",
+        "filePickerKey" : "xxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "facebookAppId" : "xxxxxxxxxxxxxxxxxxxxxxxxx",
+		"facebookSecret" : "xxxxxxxxxxxxxxxxxxxxxxx",
 		"supportEmail" : "support(at)wikwio(dot)org",
-		"ibp-database-user" : "postgres",
-        "ibp-database-password" : "postgres123",
+		"ibp-database-user" : "username",
+        "ibp-database-password" : "password",
 	    "hideLanguages" : "false"
      },
      
     "postgresql": {
         "password": {
-            "postgres": "postgres123"
+            "postgres": "password"
         }
     },
     "tomcat": {
@@ -46,8 +46,8 @@
     },
     "geoserver" : {
 		"database" : "ibp",
-        "database-user" : "geoserver",
-        "database-password" : "geoserver123",
+        "database-user" : "username",
+        "database-password" : "password",
         "data" : "/apps/biodiv/data/geoserver"
     },
     "grails" : {
@@ -65,14 +65,18 @@
     },
     "oauth" : {
         "google" : {
-            "key" : "29806730219-b6l9ofjup5f1luupdjngtv7ir8r8vlrv.apps.googleusercontent.com",
-            "secret" : "e7Sim7BDwp-CGNQ7f0m-UE6d"
+            "key" : "xxxxxxxxxxxxxxxx.apps.googleusercontent.com",
+            "secret" : "xxxxxxxxxxxxxxxxxxxxxxx"
         },
         "facebook" : {
-            "key" : "563577983720540",
-            "secret" : "f0e43eacf6bcd4860f43306ab32c5593"
+            "key" : "xxxxxxxxxxxxxxxxxxxxxxxx",
+            "secret" : "xxxxxxxxxxxxxxxxxxxxxx"
         }
 
+    },
+    "recaptcha" : {
+        "publicKey"  : "xxxxxxxxxxxxxxxxxxxxxxx",
+        "privateKey" : "xxxxxxxxxxxxxxxxxxxxxxxxx"
     }
     
 }
