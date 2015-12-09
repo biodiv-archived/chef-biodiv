@@ -20,7 +20,10 @@
 		"supportEmail" : "support(at)wikwio(dot)org",
 		"ibp-database-user" : "username",
         "ibp-database-password" : "password",
-	    "hideLanguages" : "false"
+	"hideLanguages" : "false",
+	"androidVersion" : "xxxx",
+	"iosVersion" : "xxxx"
+
      },
      
     "postgresql": {
