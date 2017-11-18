@@ -44,8 +44,11 @@ Install in the following  order
 ### git
     sudo apt-get install git
 ### chef
-    sudo curl -L https://www.opscode.com/chef/install.sh > /tmp/install.sh ; bash /tmp/install.sh -v 12.20
-
+    sudo curl -L https://www.opscode.com/chef/install.sh > /tmp/install.sh ; sudo bash /tmp/install.sh -v 12.20
+### berkshelf
+    sudo apt-get install ruby-dev
+    sudo gem install berkshelf  
+    sudo rm /usr/local/bin/chef-*
 
 Usage
 =====
@@ -65,11 +68,11 @@ Edit biodiv.json to change
     - geoserver data dir
 
 ## Install chef cookbooks
-    /opt/chefdk/bin/berks  vendor cookbooks/
+	berks vendor cookbooks/
 
 
 ## Setup biodoiversity portal
-    sudo chef-solo -c solo.rb -j biodiv.json
+    sudo /usr/bin/chef-solo -c solo.rb -j biodiv.json
 
 
 Update installation
@@ -84,14 +87,14 @@ Change to the directory where you cloned this repository
 
 Update the cookbooks
 
-    /opt/chefdk/bin/berks  update
+    berks  update
     rm -rf cookbooks
-    /opt/chefdk/bin/berks  vendor cookbooks/
+    berks  vendor cookbooks/
 
 
 ## Update biodiv installation
 
-    sudo chef-solo -c solo.rb -j biodiv.json
+    sudo /usr/bin/chef-solo -c solo.rb -j biodiv.json
 
 
 Verifying the installation
