@@ -1,8 +1,7 @@
 {
     "run_list": [
-    	"recipe[java]",
-        "recipe[biodiv]"
-    ],
+    	"recipe[biodiv]"
+     ],
     "biodiv": {
         "servername": "portal.wikwio.org",
     	"database" : "biodiv",
@@ -10,7 +9,7 @@
         "database-password" : "password",
         "data" : "/apps/biodiv",
         "augmentedmaps" : "/apps/biodiv",
-        "version" : "wikwio",
+        "version" : "master",
         "twitterUrl" : "https://twitter.com/projectwikwio",
         "facebookUrl" : "https://www.facebook.com/projectwikwio",
         "feedbackFormUrl" : "http://portal.wikwio.org/contactus",
@@ -25,33 +24,38 @@
 	"iosVersion" : "xxxx"
 
      },
-     
     "postgresql": {
         "password": {
             "postgres": "password"
         }
     },
-    "tomcat": {
-        "base_version": "7",
-        "catalina_options": "-Dorg.apache.tomcat.util.buf.UDecoder.ALLOW_ENCODED_SLASH=true -Dbiodiv.config.location=/usr/local/src/biodiv-master/additional-config.groovy -Xmx2g -XX:PermSize=256M -XX:MaxPermSize=512M -DBIODIV_CONFIG_LOCATION=/usr/share/tomcat7/.grails/biodiv-additional-config.groovy  -Dlog4jdbc.spylogdelegator.name=net.sf.log4jdbc.log.slf4j.Slf4jSpyLogDelegator -Dfile.encoding=UTF-8"
-    },
     "java" : {
           "install_flavor" : "oracle",
           "jdk_version" : "7",
+          "set_etc_environment": true,
           "oracle" : {
-                "accept_oracle_download_terms" : true
-           }    
+              "accept_oracle_download_terms" : true
+          },
+        "jdk" : {
+            "7" : {
+                "x86_64" : {
+                    "url" : "http://xxxxxxx.com/xxxx.tgz",
+                    "checksum" : "bad9a731639655118740bee119139c1ed019737ec802a630dd7ad7aab4309623"
+                }
+            }
+        }
     },
     "nginx" : {
         "client_max_body_size" : "100m",
-        "user" : "tomcat7",
-        "group" : "tomcat7"
+        "user" : "tomcat",
+        "group" : "tomcat"
     },
     "geoserver" : {
 		"database" : "ibp",
         "database-user" : "username",
         "database-password" : "password",
-        "data" : "/apps/biodiv/data/geoserver"
+        "data" : "/apps/biodiv/data/geoserver",
+        "tomcat_instance" : "biodiv"
     },
     "grails" : {
         "version" : "2.3.9"
@@ -64,7 +68,8 @@
         }
     },
     "solr" : {
-    	"data" : "/apps/biodiv/data/solr"
+    	"data" : "/apps/biodiv/data/solr",
+        "tomcat_instance" : "biodiv"
     },
     "oauth" : {
         "google" : {
@@ -81,5 +86,4 @@
         "publicKey"  : "xxxxxxxxxxxxxxxxxxxxxxx",
         "privateKey" : "xxxxxxxxxxxxxxxxxxxxxxxxx"
     }
-    
 }
