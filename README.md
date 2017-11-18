@@ -68,7 +68,7 @@ Edit biodiv.json to change
     - geoserver data dir
 
 ## Install chef cookbooks
-   berks vendor cookbooks/
+	berks vendor cookbooks/
 
 
 ## Setup biodoiversity portal
