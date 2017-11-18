@@ -21,7 +21,7 @@ Requirements
 
 ## Hardware
     Quad core processor. (Tested on Intel(R) Xeon(R) CPU E3110 @ 3.00GHz)
-    RAM at least 4GB 
+    RAM at least 4GB
     HDD at least 160 GB
 
 ## Platforms
@@ -43,16 +43,14 @@ Install in the following  order
     sudo apt-get install curl
 ### git
     sudo apt-get install git
-### chef develepment kit
-    wget http://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chefdk_0.3.0-1_amd64.deb
-    sudo dpkg -i chefdk_0.3.0-1_amd64.deb
 ### chef
-	sudo curl -L https://www.opscode.com/chef/install.sh > /tmp/install.sh ; sudo bash /tmp/install.sh -v 11.16.2
+    sudo curl -L https://www.opscode.com/chef/install.sh > /tmp/install.sh ; bash /tmp/install.sh -v 12.20
+
 
 Usage
 =====
 
-## Clone this repository 
+## Clone this repository
 
     git clone https://github.com/strandls/chef-biodiv.git
 
@@ -89,7 +87,7 @@ Update the cookbooks
     /opt/chefdk/bin/berks  update
     rm -rf cookbooks
     /opt/chefdk/bin/berks  vendor cookbooks/
-    
+
 
 ## Update biodiv installation
 
@@ -101,9 +99,9 @@ Verifying the installation
 
 The services will take a while to startup after install. Wait for about 5 minutes before you begin verification.
 
-### Check solr 
+### Check solr
 
-Visit 
+Visit
 
     localhost:8080/solr
 
@@ -112,7 +110,7 @@ It should see solr interface.
 
 ### Check geoserver
 
-Visit 
+Visit
 
     localhost:8080/geoserver
 
@@ -127,7 +125,7 @@ Run the following command
 
 You should see output like so
 
-    namepar+ 10996     1  0 18:52 ?        00:00:00 /usr/bin/ruby2.0 /usr/local/bin/parserver 
+    namepar+ 10996     1  0 18:52 ?        00:00:00 /usr/bin/ruby2.0 /usr/local/bin/parserver
 
 ### Check biodiversity portal
 Visit
@@ -141,9 +139,9 @@ Visit
 
      http://[server name  set in biodiv.json]/
 
-You should see the biodiv homepage. 
+You should see the biodiv homepage.
 
-You can login as the admin user using username: `admin` and password: `admin`. 
+You can login as the admin user using username: `admin` and password: `admin`.
 Additionally you could register a new user to check email notifications work.
 
 
