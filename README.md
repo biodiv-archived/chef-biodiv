@@ -45,7 +45,9 @@ Install in the following  order
     sudo apt-get install git
 ### chef
     sudo curl -L https://www.opscode.com/chef/install.sh > /tmp/install.sh ; sudo bash /tmp/install.sh -v 12.20
-
+### berkshelf
+    apt-get install ruby-dev
+    gem install berkshelf  
 
 Usage
 =====
