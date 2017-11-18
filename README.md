@@ -44,7 +44,7 @@ Install in the following  order
 ### git
     sudo apt-get install git
 ### chef
-    sudo curl -L https://www.opscode.com/chef/install.sh > /tmp/install.sh ; bash /tmp/install.sh -v 12.20
+    sudo curl -L https://www.opscode.com/chef/install.sh > /tmp/install.sh ; sudo bash /tmp/install.sh -v 12.20
 
 
 Usage
