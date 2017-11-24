@@ -13,4 +13,5 @@ cookbook 'geoserver-tomcat', github: 'strandls/cookbooks-geoserver-tomcat', bran
 cookbook 'ark', '~> 3.1.0'
 cookbook 'grails-cookbook', github: 'ashishshinde/grails-cookbook'
 cookbook 'biodiversity-nameparser', github: 'strandls/cookbooks-biodiversity-nameparser', branch: '1.0.0'
+cookbook 'fileops', github: 'strandls/cookbooks-fileops'
 cookbook 'biodiv', github: 'strandls/cookbooks-biodiv', branch: '0.2.0'
