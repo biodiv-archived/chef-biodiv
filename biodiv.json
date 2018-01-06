@@ -71,6 +71,21 @@
     	"data" : "/apps/biodiv/data/solr",
         "tomcat_instance" : "biodiv"
     },
+    "fileops": {
+       "servername": "fileops.wikwio.org",
+       "database" : "filesutradb",
+       "database-user" : "username",
+       "database-password" : "password",
+       "version" : "master",
+       "googleClientId" : "xxxxxxxxxxxxxxxxxxxxxxxxx",
+       "googleClientSecret" : "xxxxxxxxxxxxxxxxxxxxxxxxx",
+       "facebookClientId" : "xxxxxxxxxxxxxxxxxxxxxxxxx",
+       "facebookClientSecret" : "xxxxxxxxxxxxxxxxxxxxxxxxx",
+       "flickrClientId" : "xxxxxxxxxxxxxxxxxxxxxxxxx",
+       "flickrClientSecret" : "xxxxxxxxxxxxxxxxxxxxxxxxx",
+       "photosClientId" : "xxxxxxxxxxxxxxxxxxxxxxxxx",
+       "photosClientSecret" : "xxxxxxxxxxxxxxxxxxxxxxxxx"
+    },
     "oauth" : {
         "google" : {
             "key" : "xxxxxxxxxxxxxxxx.apps.googleusercontent.com",
