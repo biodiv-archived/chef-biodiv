@@ -84,7 +84,10 @@
        "flickrClientId" : "xxxxxxxxxxxxxxxxxxxxxxxxx",
        "flickrClientSecret" : "xxxxxxxxxxxxxxxxxxxxxxxxx",
        "photosClientId" : "xxxxxxxxxxxxxxxxxxxxxxxxx",
-       "photosClientSecret" : "xxxxxxxxxxxxxxxxxxxxxxxxx"
+       "photosClientSecret" : "xxxxxxxxxxxxxxxxxxxxxxxxx",
+	"dropboxClientId" : "xxxxxxxxxxxxxxxxxxxxxxxxx",
+       "dropboxClientSecret" : "xxxxxxxxxxxxxxxxxxxxxxxxx",
+	    
     },
     "oauth" : {
         "google" : {
