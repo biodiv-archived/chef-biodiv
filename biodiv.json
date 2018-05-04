@@ -19,9 +19,9 @@
 		"supportEmail" : "support(at)wikwio(dot)org",
 		"ibp-database-user" : "username",
         "ibp-database-password" : "password",
-	"hideLanguages" : "false",
-	"androidVersion" : "xxxx",
-	"iosVersion" : "xxxx"
+        "hideLanguages" : "false",
+        "androidVersion" : "xxxx",
+        "iosVersion" : "xxxx"
 
      },
     "postgresql": {
@@ -31,16 +31,16 @@
     },
     "java" : {
           "install_flavor" : "oracle",
-          "jdk_version" : "7",
+          "jdk_version" : "8",
           "set_etc_environment": true,
           "oracle" : {
               "accept_oracle_download_terms" : true
           },
         "jdk" : {
-            "7" : {
+            "8" : {
                 "x86_64" : {
                     "url" : "http://xxxxxxx.com/xxxx.tgz",
-                    "checksum" : "bad9a731639655118740bee119139c1ed019737ec802a630dd7ad7aab4309623"
+                    "checksum" : "b6dd2837efaaec4109b36cfbb94a774db100029f98b0d78be68c27bec0275982"
                 }
             }
         }
@@ -58,7 +58,7 @@
         "tomcat_instance" : "biodiv"
     },
     "grails" : {
-        "version" : "2.3.9"
+        "version" : "2.4.3"
     },
     "postfix" : {
         "main" : {
@@ -103,5 +103,21 @@
     "recaptcha" : {
         "publicKey"  : "xxxxxxxxxxxxxxxxxxxxxxx",
         "privateKey" : "xxxxxxxxxxxxxxxxxxxxxxxxx"
+    },
+    "redis" : {
+        "data_dir" : "/apps/biodiv/redis",
+        "server" : {
+            "addr" : "127.0.0.1",
+            "port" : "6379"
+        }
+    },
+    "elasticsearch" : {
+        "user" : {
+            "username": "elasticsearch"
+        },
+        "install" : {},
+        "configure" : {},
+        "service" : {},
+        "plugins": {}
     }
 }
