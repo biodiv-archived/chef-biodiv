@@ -1,5 +1,6 @@
 {
-    "run_list": [
+    "run_list": [        
+	"recipe[biodiv-api]",	    
     	"recipe[biodiv]"
      ],
     "biodiv": {
@@ -120,4 +121,10 @@
         "service" : {},
         "plugins": {}
     }
+    "gradle" : {
+        "version" : "4.8.1",
+        "url" : "https://services.gradle.org/distributions/gradle-4.8.1-bin.zip",
+        "checksum" : "af334d994b5e69e439ab55b5d2b7d086da5ea6763d78054f49f147b06370ed71"
+    },
+
 }
