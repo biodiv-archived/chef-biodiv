@@ -28,6 +28,9 @@
 	"ssl_certificate": "/home/biodiv/nginx.crt",
 	"ssl_certificate_key" : "/home/biodiv/nginx.key" 
      },
+    "biodiv-ui": {
+	"version" : "bbp-ui"
+    },
     "postgresql": {
         "password": {
             "postgres": "password"
