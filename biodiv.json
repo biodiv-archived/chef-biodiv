@@ -1,5 +1,7 @@
 {
-    "run_list": [        
+    "run_list": [    
+	"recipe[biodiv-ui]",
+        "recipe[naksha]",
 	"recipe[biodiv-api]",	    
     	"recipe[biodiv]"
      ],
@@ -22,8 +24,9 @@
         "ibp-database-password" : "password",
         "hideLanguages" : "false",
         "androidVersion" : "xxxx",
-        "iosVersion" : "xxxx"
-
+        "iosVersion" : "xxxx",
+	"ssl_certificate": "/home/biodiv/nginx.crt",
+	"ssl_certificate_key" : "/home/biodiv/nginx.key" 
      },
     "postgresql": {
         "password": {
