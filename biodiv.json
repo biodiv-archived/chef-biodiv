@@ -98,6 +98,7 @@
     },
     "oauth" : {
         "google" : {
+		"apikey" : "xxxxxxxxxxxxxxxxxxxxxxxxx",
             "key" : "xxxxxxxxxxxxxxxx.apps.googleusercontent.com",
             "secret" : "xxxxxxxxxxxxxxxxxxxxxxx"
         },
